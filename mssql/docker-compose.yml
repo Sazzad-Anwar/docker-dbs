@@ -11,7 +11,7 @@ services:
       SA_PASSWORD: 'Sazzad14#' # Set your desired SA password here
       ACCEPT_EULA: 'Y'
       MSSQL_PID: 'Developer'
-      MSSQL_USER: 'sazzad' # created username is sa
+      MSSQL_USER: 'sa' # created username is sa
       MSSQL_PASSWORD: 'Sazzad14#'
     volumes:
       - mssql:/var/opt/mssql/data # Mount volume to persist data
