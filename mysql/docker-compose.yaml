@@ -1,7 +1,6 @@
-version: '3.8'
 services:
   mysql:
-    image: mysql:latest
+    image: mysql:8.0-debian
     container_name: MySQL
     restart: always
     environment:
@@ -9,7 +8,7 @@ services:
       - MYSQL_PASSWORD=sazzad14
       - MYSQL_ROOT_PASSWORD=sazzad14
     ports:
-      - '3306:3306'
+      - "3306:3306"
     volumes:
       - db:/var/lib/mysql
 volumes:
