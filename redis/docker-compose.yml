@@ -1,7 +1,7 @@
 services:
   redis:
     build: .
-    container_name: redis_prod
+    container_name: redis
     restart: unless-stopped
     ports:
       - "6379:6379"
@@ -11,8 +11,19 @@ services:
     networks:
       - redis_network
     environment:
-      - REDIS_PASSWORD=sazzad14
-    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+      - redis_password=sazzad14
+
+    command:
+      [
+        "redis-server",
+        "/usr/local/etc/redis/redis.conf",
+        "--appendonly",
+        "yes",
+        "--appendfsync",
+        "everysec",
+        "--requirepass",
+        "sazzad14",
+      ]
 
 volumes:
   redis_data:
