@@ -11,7 +11,7 @@ services:
     networks:
       - redis_network
     environment:
-      - REDIS_PASSWORD="remoteControlCenter" # Set this in redis.conf if needed
+      - REDIS_PASSWORD=sazzad14
     command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
 
 volumes:
